@@ -1,6 +1,6 @@
 "use server";
 import db from "@repo/database/client";
-import type { SaleItem } from "@/prisma/client";
+import type { SaleItem } from "@repo/database/client";
 import MercadoPagoConfig, { Payment } from "mercadopago";
 import { Resend } from "resend";
 import { ThanksTemplate } from "@/components/email-templates/thanks";

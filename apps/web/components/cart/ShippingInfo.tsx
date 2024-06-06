@@ -35,7 +35,8 @@ const ShippingInfo = ({ provinces }: { provinces: Province[] }) => {
 	} = useCartStore();
 
 	const handleShippingCosts = useCallback(
-		(provinceId: number) => {
+		(provinceId: number | undefined) => {
+			if (!provinceId) return 0;
 			const province = provinces.find((p) => p.id === provinceId);
 			if (province) {
 				setShippingCost(province.shippingCost);
@@ -49,7 +50,7 @@ const ShippingInfo = ({ provinces }: { provinces: Province[] }) => {
 	}, [user.provinceId, handleShippingCosts]);
 
 	useEffect(() => {
-		if (!user.provinceId) handleShippingCosts(provinces[1].id);
+		if (!user.provinceId) handleShippingCosts(provinces[1]?.id);
 	}, [provinces, handleShippingCosts, user.provinceId]);
 
 	return (
@@ -166,7 +167,7 @@ const ShippingInfo = ({ provinces }: { provinces: Province[] }) => {
 							defaultValue={
 								user.provinceId
 									? user.provinceId.toString()
-									: provinces[1].id.toString()
+									: provinces[1]?.id.toString()
 							}
 							onValueChange={(e) => {
 								setUser({

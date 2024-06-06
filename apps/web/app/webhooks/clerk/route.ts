@@ -62,7 +62,7 @@ export async function POST(req: Request) {
 			clerkId: id,
 			firstName: first_name,
 			lastName: last_name,
-			email: email_addresses[0].email_address,
+			email: email_addresses[0]?.email_address,
 			provinceId: (await getAllProvinces()).at(0)?.id,
 		};
 

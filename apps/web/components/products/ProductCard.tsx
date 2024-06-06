@@ -58,7 +58,7 @@ const ProductCard = ({ product }: { product: ExtendedProduct }) => {
 						width={250}
 						height={250}
 						quality={75}
-						src={product?.images[0].url}
+						src={product?.images[0]?.url ?? ""}
 						alt={product.name}
 						className="w-full h-48 object-cover"
 					/>

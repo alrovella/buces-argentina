@@ -1,5 +1,5 @@
 "use server";
-import type { User } from "@/prisma/client";
+import type { User } from "@repo/database/client";
 import { UserRole } from "@prisma/client";
 import db from "@repo/database/client";
 import { userSchema } from "@/schemas/schemas";

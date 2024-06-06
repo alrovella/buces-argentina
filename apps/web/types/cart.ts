@@ -1,5 +1,5 @@
 import type { CartProduct } from "./product";
-import type { DiscountCoupon, User } from "@/prisma/client";
+import type { DiscountCoupon, User } from "@repo/database/client";
 export type CartStore = {
 	shippingCost: number;
 	discountCoupon?: DiscountCoupon;
