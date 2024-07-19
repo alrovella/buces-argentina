@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import { Toaster } from "@repo/ui/components/ui/sonner";
 import { SignedIn } from "@clerk/nextjs";
 import type { Metadata } from "next";
